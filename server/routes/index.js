@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const result = await Task.find({})
-        res.json({message: 'Recherche effectué avec succès !', data: result}).status(200)
+        res.json({result}).status(200)
     } catch (e) {
         res.status(500).send(e)
     }
@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
         if (!req.params.id) return res.status(404).send('id not found')
         const id = req.params.id
         const result = await Task.findById(id)
-        res.json({message: 'Recherche effectué avec succès !', data: result}).status(200)
+        res.json({result}).status(200)
     } catch (e) {
         res.send(e).status(500)
     }
@@ -56,6 +56,15 @@ router.delete('/:id', async (req, res) => {
         res.status(200).send('deleted')
     } catch (e) {
         res.status(500).send(e)
+    }
+})
+
+router.delete('/', async (req, res) => {
+    try {
+        await Task.deleteMany({})
+        res.status(200).send('all database deleted');
+    } catch (e) {
+        res.status(500).send(e);
     }
 })
 
