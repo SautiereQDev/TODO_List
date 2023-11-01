@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
 
-function App() {
+const App = () => {
+
+    const [tasks, setTasks] = useState(null);
+
+    useEffect(() => {
+        try {
+            fetch('http://localhost:4000/tasks')
+                .then((res) => res.json())
+                .then((data) => setTasks(data.data))
+                .catch(e => console.log(e))
+        } catch (e) {
+            console.log(e)
+        }
+    }, []);
+    console.log(tasks)
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+        <div>
+            <ul>
+                {tasks && tasks.map((task) => (
+                    <li key={task._id}>
+                        <p>{task.name}</p>
+                        <p>{task.status}</p>
+                    </li>
+                ))}
+            </ul>
+
         </div>
     );
-}
+};
 
 export default App;

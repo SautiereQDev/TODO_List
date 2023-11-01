@@ -1,5 +1,6 @@
 import express from 'express';
 import Task from "../models/taskModel.js";
+import "mongoose";
 
 export const router = express.Router();
 
