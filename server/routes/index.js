@@ -6,8 +6,7 @@ export const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        const task1 = new Task(req.body)
-        await task1.save()
+        const task1 = await Task.create(req.body)
         res.json({message: 'Tâche ajoutée avec succès !', data: task1}).status(200)
     } catch (e) {
         res.send(e).status(500)

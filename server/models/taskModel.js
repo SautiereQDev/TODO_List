@@ -1,5 +1,6 @@
 import mongoose, {Schema} from "mongoose";
 
+
 const taskSchema = new Schema({
     name: {
         type: String,
@@ -12,7 +13,7 @@ const taskSchema = new Schema({
     },
     tag: {
         type: String,
-        default: 'general'
+        default: 'General',
     }
 }, {timestamps: true});
 

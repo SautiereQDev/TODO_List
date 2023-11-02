@@ -21,7 +21,7 @@ const App = () => {
             <ul>
                 {tasks && tasks.map((task) => (
                     <li key={task._id}>
-                        <Task name={task.name} tag={task.tag} id={task._id}/>
+                        <Task name={task.name.toUpperCase()} tag={task.tag} id={task._id} status={task.status}/>
                     </li>
                 ))}
             </ul>
