@@ -3,7 +3,7 @@ import DeleteButton from "./DeleteButton";
 
 const Task = ({name, tag, id}) => {
 
-    if (name === 0 || tag === 0 || id === 0) {
+    if ((name === null || undefined) || (tag === null || undefined) || (id === null || undefined)) {
         throw new Error('Task component requires name, tag, and id props')
     }
 

@@ -9,8 +9,8 @@ const DeleteButton = ({id}) => {
                 'Content-Type': 'application/json'
             },
         })
-            .then(r => console.log(r))
-            .catch(e => console.log(e))
+            .then(() => console.log('Tache supprimée avec succès !'))
+            .catch(e => console.log('Un problème est survenu', e))
     }
 
     return (

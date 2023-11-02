@@ -14,7 +14,7 @@ const App = () => {
         } catch (e) {
             console.log(e)
         }
-    }, []);
+    }, [tasks]);
 
     return (
         <div>
