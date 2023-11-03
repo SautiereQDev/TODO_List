@@ -16,8 +16,8 @@ const Task = ({name, tag, id, status}) => {
     if( status === false) {
         return (
             <div className='task' style={{backgroundColor: '#DFDFDF'}}>
-                <ValidateButton id={id} status={status}/>
-                <p className='taskName' >{name}</p>
+                <ValidateButton id={id} status={status} />
+                <p className='taskName'>{name}</p>
                 <Tag tag={tag}/>
                 <DeleteButton id={id}/>
             </div>

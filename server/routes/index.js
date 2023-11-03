@@ -2,10 +2,15 @@ import express from 'express';
 import Task from "../models/taskModel.js";
 import "mongoose";
 
-export const router = express.Router();
+const router = express.Router();
+
+const acceptedTags = ['General', 'Achat', 'Travail', 'Personnel', 'Autre', 'Scolaire']
 
 router.post('/', async (req, res) => {
     try {
+        if(!req.body.name) return res.send('name is required').status(400)
+        if(req.body.tag && !acceptedTags.includes(req.body.tag)) return res.send('tag not accepted').status(400)
+
         const task1 = await Task.create(req.body)
         res.json({message: 'Tâche ajoutée avec succès !', data: task1}).status(200)
     } catch (e) {
@@ -37,7 +42,7 @@ router.patch('/:id', async (req, res) => {
         const id = req.params.id
 
         if (!id) return res.send('id not found').status(404)
-
+        if(req.body.tag && !acceptedTags.includes(req.body.tag)) return res.send('Please enter a valid tag : {General, Achat, Travail, Personnel, Autre}').status(400)
         const update = await Task.findByIdAndUpdate(id, req.body)
         res.status(200).send(update)
     } catch (e) {
