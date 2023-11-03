@@ -14,9 +14,12 @@ const DeleteButton = ({id}) => {
     }
 
     return (
-        <button onClick={handleClick} className='deleteButton'>
-            <p style={{margin: '0.5rem'}}>X</p>
-        </button>
+        <div className='deleteButton'>
+            <button onClick={handleClick} className='button'>
+                <p style={{margin: '0.5rem'}}>X</p>
+            </button>
+        </div>
+
     )
 }
 

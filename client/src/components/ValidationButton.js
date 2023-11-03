@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ValidateButton = ({id, status}) => {
+const ValidationButton = ({id, status}) => {
 
     const isChecked = status === true
 
@@ -16,7 +16,9 @@ const ValidateButton = ({id, status}) => {
             .catch(e => console.log('Un problème est survenu', e))
     }
         return (
-            <input type="checkbox" onChange={ handleChange } defaultChecked={isChecked}/>
+            <div className='validationButton'>
+                <input type="checkbox" onChange={ handleChange } defaultChecked={isChecked}/>
+            </div>
         );
 }
-export default ValidateButton
+export default ValidationButton

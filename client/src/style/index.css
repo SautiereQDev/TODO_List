@@ -27,39 +27,56 @@ ul {
 }
 
 .validationButton{
-    width: 2.5vw;
+    width: 3.5vw;
     margin: auto;
+    padding-right: 1vw;
+}
 
+.validationButton > input{
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 20px;
+    border: 5px solid #000000;
+    cursor: pointer;
 }
 
 .taskName{
-    width: 15.5vw;
+    width: 19vw;
     font-weight: bold;
     margin: auto;
     text-align: left;
 }
 
 .taskTag{
-    width: 6vw;
+    width: 7.5vw;
     margin: auto;
     text-align: center;
     color: #FFFFFF;
     font-size: 0.90rem;
+    font-weight: 600;
+
 }
 
 .taskTag > p{
     padding: 0.75rem 0 0.75rem 0;
     border-radius: 25px;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
 }
-.deleteButton {
+
+.deleteButton{
+    width: 7vw;
+    margin: auto;
+    padding-right: 0.75vw;
+    text-align: right;
+
+}
+
+.button {
     background-color: #AB0000;
     color: #FFFF;
-    border: 2px solid #000000;
-    width: 4.5vw;
-    margin: 0.5rem 0.75rem 0.5rem 0;
-    border-radius: 20px;
+    border-radius: 25px;
+    width: 4vw;
     cursor: pointer;
     font-family: 'Mochiy Pop One', serif;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }

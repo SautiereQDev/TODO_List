@@ -1,6 +1,6 @@
 import React from 'react';
 import DeleteButton from "./DeleteButton";
-import ValidateButton from "./ValidateButton";
+import ValidateButton from "./ValidationButton";
 import Tag from "./Tag";
 
 const Task = ({name, tag, id, status}) => {
