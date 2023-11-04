@@ -4,7 +4,6 @@ import AddTaskButton from "./components/AddTaskButton";
 import EditedTask from "./components/EditedTask";
 
 
-
 const App = () => {
 
     const [tasks, setTasks] = useState(null);

@@ -48,7 +48,6 @@ button {
     height: 1.5vw;
     border-radius: 20px;
     border: 5px solid #000000;
-    cursor: pointer;
 }
 
 .taskName{
@@ -65,6 +64,7 @@ button {
     color: #FFFFFF;
     font-size: 0.90rem;
     font-weight: 600;
+    padding-right: 2vw;
 
 }
 
@@ -75,21 +75,15 @@ button {
 }
 
 .deleteButton{
-    width: 7vw;
     margin: auto;
     padding-right: 0.75vw;
     text-align: right;
-
 }
 
 .deleteButton > button {
-    background-color: #AB0000;
+    background-color: #DC0000;
     color: #FFFF;
-    border-radius: 20px;
-    width: 4vw;
-    cursor: pointer;
-    font-family: 'Mochiy Pop One', serif;
-    font-size: 1.75rem;
+    border-radius: 15px;
     margin: auto;
 }
 
@@ -97,7 +91,7 @@ button {
     max-width: 2.5vw;
     aspect-ratio: 0;
     margin: auto;
-    padding: 0.45rem 0.075rem 0.075rem 0.075rem;
+    padding: 0.45rem 0.075rem 0.075rem 0.2rem;
 }
 
 .addButton{
@@ -110,11 +104,49 @@ button {
     margin: auto;
     padding: 0.30rem;
 }
-form{
+
+.task > form {
+}
+
+.task > form > input {
+    font-size: 0.95rem;
+    margin-left: 1vw;
+}
+
+.task > form > select {
+    font-size: 0.95rem;
+    margin-left: 1vw;
+}
+
+.validationButton {
+    min-height: 5.5vh;
+    margin-left: 3vw;
+}
+
+.validationButton > button {
+    background-color: #00BF08;
+    color: #FFFF;
+    border-radius: 15px;
+    width: 4vw;
     margin: auto;
 }
-form > div{
+
+.validationButton > button > img {
+    max-width: 2.25vw;
+    aspect-ratio: 0;
+    margin: auto;
+    padding: 0.6rem 0.045rem 0.3rem 0.06rem;
+}
+
+.editTask {
     display: flex;
-    justify-content: space-evenly;
+    height: 9vh;
+    width: 35vw;
+    padding-left: 2rem;
+    margin-left: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 30px;
+    border: 3px solid #000000;
     align-items: center;
+    font-family: 'Red Hat Display', sans-serif;
 }

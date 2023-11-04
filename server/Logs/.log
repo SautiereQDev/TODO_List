@@ -30,3 +30,11 @@ DELETE /tasks/undefined 500 1.800 ms - 243
 DELETE /tasks/undefined 500 0.494 ms - 243
 OPTIONS /tasks/undefined 204 0.075 ms - 0
 DELETE /tasks/undefined 500 0.437 ms - 243
+OPTIONS /tasks/6543e769316e21c91b20e22b 204 0.384 ms - 0
+OPTIONS /tasks 204 0.392 ms - 0
+OPTIONS /tasks/6546d9c92bbf9cc5ba2ca79e 204 0.095 ms - 0
+OPTIONS /tasks 204 0.079 ms - 0
+OPTIONS /tasks/6546d9dc2bbf9cc5ba2caa35 204 0.168 ms - 0
+OPTIONS /tasks/6546d9dc2bbf9cc5ba2caa35 204 0.099 ms - 0
+OPTIONS /tasks 204 0.077 ms - 0
+OPTIONS /tasks/6546d9f62bbf9cc5ba2cabeb 204 0.098 ms - 0

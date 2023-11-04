@@ -1,13 +1,16 @@
-import React from 'react';
-import DeleteButton from "./DeleteButton";
+import React, {useRef} from 'react';
+import ValidateTaskButton from "./ValidateTaskButton";
 
 const EditedTask = ({handleClick}) => {
 
+    const taskName = useRef('');
+    const tag = useRef('');
+
     return (
-        <div className='task'>
+        <div className='editTask'>
             <form>
-                <input type="text" placeholder='Task name'/>
-                <select>
+                <input type="text" placeholder='Task name' ref={taskName} autoFocus={true}/>
+                <select ref={tag}>
                     <option value="" >--Please select Tag--</option>
                     <option value="General" >General</option>
                     <option value="Achat" >Achat</option>
@@ -17,11 +20,13 @@ const EditedTask = ({handleClick}) => {
                     <option value="Scolaire" >Scolaire</option>
                 </select>
             </form>
+            <ValidateTaskButton taskName={taskName.current.value} tag={tag.current.value}/>
             <div className='deleteButton'>
                 <button onClick={handleClick}>
                     <img src="/deleteIcon.png" alt="DeleteIcon UI Icon"/>
                 </button>
             </div>
+
         </div>
     );
 };
