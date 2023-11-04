@@ -3,14 +3,20 @@ import mongoose from "mongoose";
 import taskRouter from './routes/index.js'
 import dotenv from 'dotenv'
 import cors from 'cors'
-
+import morgan from 'morgan'
+import fs from "fs";
 dotenv.config()
 
 const app = express()
 
-app.use(cors())
-app.use(express.json())
-app.use('/tasks', taskRouter);
+const accessLogStream = fs.createWriteStream('./logs/.log', { flags: 'a' })
+
+app
+    .use(morgan('combined', {stream: accessLogStream}))
+    .use(cors())
+    .use(express.json())
+    .use('/tasks', taskRouter)
+
 mongoose.connect(process.env.MONGODB_URI).then(() => console.log('connected to db')).catch(e => console.log(e));
 
 app.listen(process.env.PORT, () => {
