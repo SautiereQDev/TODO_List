@@ -9,7 +9,7 @@ dotenv.config()
 
 const app = express()
 
-const accessLogStream = fs.createWriteStream('./logs/.log', { flags: 'a' })
+const accessLogStream = fs.createWriteStream('./Logs/.log', { flags: 'a' })
 
 app
     .use(morgan('combined', {stream: accessLogStream}))
