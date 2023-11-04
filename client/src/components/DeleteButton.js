@@ -15,8 +15,8 @@ const DeleteButton = ({id}) => {
 
     return (
         <div className='deleteButton'>
-            <button onClick={handleClick} className='button'>
-                <p style={{margin: '0.5rem'}}>X</p>
+            <button onClick={handleClick}>
+                <img src="/deleteIcon.png" alt="DeleteIcon UI Icon"/>
             </button>
         </div>
 

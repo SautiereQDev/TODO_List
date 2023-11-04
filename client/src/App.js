@@ -1,9 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import Task from "./components/Task";
+import AddTaskButton from "./components/AddTaskButton";
+import EditedTask from "./components/EditedTask";
+
+
 
 const App = () => {
 
     const [tasks, setTasks] = useState(null);
+    const [showNewTask, setShowNewTask] = useState(false);
+
 
     useEffect(() => {
         try {
@@ -16,6 +22,10 @@ const App = () => {
         }
     }, [tasks]);
 
+    const toggleNewTask = () => {
+        setShowNewTask(!showNewTask)
+    }
+
     return (
         <div>
             <ul>
@@ -25,7 +35,8 @@ const App = () => {
                     </li>
                 ))}
             </ul>
-
+            {showNewTask && <EditedTask handleClick={toggleNewTask}/>}
+            {!showNewTask && <AddTaskButton handleClick={toggleNewTask}/>}
         </div>
     );
 };

@@ -8,11 +8,17 @@ import fs from "fs";
 dotenv.config()
 
 const app = express()
+const dev = ':method :url :status :response-time ms - :res[content-length]'
+
 
 const accessLogStream = fs.createWriteStream('./Logs/.log', { flags: 'a' })
 
+const skipLog = (req, res) => {
+    return res.statusCode === 200
+}
+
 app
-    .use(morgan('combined', {stream: accessLogStream}))
+    .use(morgan(dev, {stream: accessLogStream, skip: skipLog}))
     .use(cors())
     .use(express.json())
     .use('/tasks', taskRouter)
